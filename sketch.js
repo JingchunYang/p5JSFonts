@@ -1,13 +1,14 @@
-let font, fontBold, fontHandjet;
+let font, fontBold, fontJosefinSans;
 let bold = false;
 let switcher = false;
-let currentFont = "Handjet";
+let currentFont = "Roboto-Regular";
 
 function preload() {
-  fontHandjet = loadFont('assets/fonts/Handjet/static/Handjet-Bold.ttf');
+  fontJosefinSans=loadFont('assets/fonts/Josefin_Sans/static/JosefinSans-Bold.ttf');
   font = loadFont('assets/fonts/Inconsolata/static/Inconsolata-Black.ttf');
   fontBold = loadFont('assets/fonts/Inconsolata/static/Inconsolata-ExtraBold.ttf');
   fontRoboto = loadFont('assets/fonts/Roboto/Roboto-Regular.ttf');
+  // fontAnta=loadFont('https://fonts.googleapis.com/css2?family=Anta&family=Josefin+Sans:ital,wght@0,100..700;1,100..700')
 }
 
 function setup() {
@@ -21,23 +22,22 @@ function mousePressed(fxn) {
   switcher = true;
 }
 
+
+
 function draw() {
   clear();
   if (switcher === true) {
     if (bold === false) {
-      textFont(fontHandjet);
-      // textFont(fontRoboto);
-      //fontHandjet
-      console.log("Handjet");
-      currentFont ="Handjet";
-      // console.log("Roboto-Regular");
-      // currentFont ="Roboto-Regular";
+      textFont(fontJosefinSans);
+      console.log("Josefin-Sans");
+      currentFont ="Josefin-Sans";
 
       // textFont(fontBold);
       // fontBold.elt.id = "Inconsolata-ExtraBold"; 
     
 
       switcher = false;
+      
     } else {
       textFont(font);
       console.log("Inconsolata-Black");
